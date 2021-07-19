@@ -1,0 +1,16 @@
+# Assembly-and-Neuralink-
+
+ # Making a non invasive neuralink. Eyelide Screen.      
+
+
+Is to figure out the main components of Neuralink hardware. 
+WIth the porpuse of making the whole device smaller.
+ SO substraction of size
+ and substraction of invasiveness.
+So I will keep peeling the layers of abstarction 
+from JavaSciprt to C language, and from to assmbly and Binary code. 
+
+By doing this I expect to gain the tools necessary to creat a new smaller and non- invasive technology. 
+
+
+
