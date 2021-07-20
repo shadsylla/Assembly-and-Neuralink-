@@ -1,0 +1,59 @@
+.global_start
+
+CMP R1, R2
+
+R2 > R1
+
+_start:
+
+ MOV R0, #0x14
+ B other  @this is the line to branch
+ MOV R2, #0xA
+
+other:
+ MOV R7, #1
+ SWI 0
+
+
+@to compare
+ _start:
+
+  MOV R1, #5
+
+  MOV R2, #20
+ CMP R1, R2
+ BEQ vals_equal    @ BEQ branch if if those values are equal.
+ BGT r1_gt              @ branch if it is greater
+r1_lt:
+ MOV R0, #2
+ B end
+
+
+r1_gt:   @this is for greater than situation
+  MOV R0, #3
+  B end
+
+vals_equal:    @if equal
+  MOV R0, #1
+
+end:
+ MOV R7, #1
+
+
+
+So for a CPU
+'we have:
+1- Arithmitic logic unit
+
+2-Program memory
+
+3- RAM random access memory
+
+A function is called OP coode, and each argument called an operand.
+
+intructions take:  4 intruction
+firt will be MOV
+  source to destination
+
+
+If I want to compare I will use the instruction CMP
