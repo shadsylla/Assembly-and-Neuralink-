@@ -184,6 +184,81 @@ _start:
 
 
 
+ Conditional .operators:
+
+.global_start
+
+_start:
+
+ MOV R1, #5 @ 0101
+ MOV R@,#9  @ 1001
+ AND R0, R!, R2
+
+
+ end:
+   MOV R7, #1
+   SWI 0
+
+
+
+   .global_start
+
+   _start:
+
+    MOV R1, #5 @ 0101
+    MOV R@,#9  @ 1001
+    BIC R0, R!, R2 @ BIC bit clear
+
+
+    end:
+      MOV R7, #1
+      SWI 0
+
+@ to turn a lowercase into Uppercase
+
+
+.globa_start
+
+ _start:
+  MOV R7, #3 @ System call Keyborad
+  MOV R0, #0 @ Input Stream Keyboard
+  MOV R2, # read 1 characters
+  LDR R1, =character
+  SWI 0
+
+
+_uppercase:
+ LDR R1, = character
+ LDR R0, [R1]
+
+@ a  :0110 0001
+@    0010 0000
+@ A :0100 0001
+BIC R0, R0, #32     @ 32 means a uppercase
+
+STR R0, [R1]
+
+ _write:
+
+  MOV R7, #4  @ Syatem call output to screen
+  MOV R0, #1  @ Output monitor
+  MOV R2, #1  @ number of characters
+  LDR R1 =character
+  SWI 0
+
+end:
+ MOV R7, #1
+
+ .data
+    character:
+   ascii " "
+
+
+
+  The goals of this whole thing:
+   Problem oriented learning assembly.
+   Problem is how to create a below eyelid screen to use neuralink none invasively.
+
 
 
 
