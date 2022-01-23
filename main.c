@@ -7,8 +7,9 @@
 
 void bubble (int work[], const int size, int (*compare) 
 	(int a, int b) );
-	int  ascending (int a, int b); 
-	int descending ( int a, int b ); 
+int  ascending (int a, int b); 
+
+int descending ( int a, int b ); 
 
 
 	int main()
@@ -100,13 +101,13 @@ void bubble (int work[], const int size, int (*compare)
    		  	if ((*compare) (work [ count ], work [ count + 1 ]) ) 
    		  	{
    		  		 swap(&work [ count ], &work [count], &work [ count + 1] ) )
-             }
-   		  }
+                        }/* end if */
+   		  }/* end for loop*/
 
+		}/* end for loop*/
 
-
-   		}
-   	}
+   	
+   	
 
 
 
@@ -139,4 +140,4 @@ void bubble (int work[], const int size, int (*compare)
   int descending(int a, int b )
   {
 	return b > a;  /* vice versa with the previous func. */
-  }
+  }/* end descennding*/
